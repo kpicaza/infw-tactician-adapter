@@ -1,0 +1,74 @@
+{
+    "name": "infw/tactician-adapter",
+    "type": "library",
+    "description": "In framework utility.",
+    "keywords": [
+        "infw",
+        "framework"
+    ],
+    "homepage": "https://github.com/infw/tactician-adapter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kpicaza",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../*"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "infw/event-sourcing": "@dev",
+        "infw/framework": "@dev",
+        "league/tactician": "^1.0",
+        "league/tactician-command-events": "^0.6.0",
+        "league/tactician-container": "^1.0",
+        "league/tactician-logger": "^0.10.0",
+        "monolog/monolog": "^1.23",
+        "zendframework/zend-expressive": "^2.0.2",
+        "zendframework/zend-stdlib": "^3.1"
+    },
+    "require-dev": {
+        "fetzi/phpspec-watcher": "^1.0",
+        "henrikbjorn/phpspec-code-coverage": "^3.0",
+        "memio/spec-gen": "^0.6.1",
+        "phpspec/phpspec": "^3.0",
+        "phpunit/phpunit": "^5.7.21",
+        "phpstan/phpstan": "^0.6.4",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "InFw\\TacticianAdapter\\": "src/InFw/TacticianAdapter"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InFw\\TacticianAdapter\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "cp -r vendor/infw/tactician-adapter/config/autoload/* config/autoload/",
+        "watch-tests": "phpspec-watcher watch --ansi",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "spec-describe": "phpspec describe --ansi",
+        "spec-run": "phpspec run --format=pretty --ansi",
+        "inspect": "phpstan analyse -l 4 -c phpstan.neon src --ansi"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "zf": {
+            "config-provider": "InFw\TacticiaAdapter\ConfigProvider"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

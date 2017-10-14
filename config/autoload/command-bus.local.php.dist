@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'tactician' => [
+        'handler-map' => [
+//            App\Command\SomeCommand::class => App\Handler\SomeCommandHandler::class,
+        ],
+    ],
+];

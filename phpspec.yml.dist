@@ -1,0 +1,12 @@
+extensions:
+  Memio\SpecGen\MemioSpecGenExtension: ~
+  PhpSpecCodeCoverage\CodeCoverageExtension:
+    format:
+      - clover
+    whitelist:
+      - src/
+    output:
+      clover: coverage.clover
+
+suites:
+    default: ~
