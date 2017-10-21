@@ -65,7 +65,7 @@
             "dev-master": "1.0-dev"
         },
         "zf": {
-            "config-provider": "InFw\TacticiaAdapter\ConfigProvider"
+            "config-provider": "InFw\\TacticiaAdapter\\ConfigProvider"
         }
     },
     "config": {
