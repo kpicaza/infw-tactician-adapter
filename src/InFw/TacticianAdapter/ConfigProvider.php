@@ -2,9 +2,9 @@
 
 namespace InFw\TacticianAdapter;
 
-use InFw\EventSourcing\Emitter;
 use InFw\TacticianAdapter\CommandBus\ReleaseEventsMiddleware;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
+use InFw\TacticianAdapter\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
 use League\Event\EmitterInterface;
 use League\Tactician\CommandBus;
@@ -55,10 +55,10 @@ class ConfigProvider
                 LockingMiddleware::class => LockingMiddleware::class,
                 LoggerMiddleware::class => LoggerMiddleware::class,
                 EventMiddleware::class => EventMiddleware::class,
-                EmitterInterface::class => Emitter::class,
                 ReleaseEventsMiddleware::class => ReleaseEventsMiddleware::class,
             ],
             'factories' => [
+                EmitterInterface::class => EmitterFactory::class,
                 CommandBus::class => CommandBusFactory::class,
                 HandlerLocator::class => HandlerLocatorFactory::class,
             ],
