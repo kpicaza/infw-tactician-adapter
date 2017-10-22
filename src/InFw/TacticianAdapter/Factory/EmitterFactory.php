@@ -13,7 +13,7 @@ class EmitterFactory
 
         $emitter = Emitter::instance();
 
-        array_walk($events, function ($event, $listeners) use ($container, $emitter) {
+        array_walk($events, function ($listeners, $event) use ($container, $emitter) {
             array_map(function ($listener) use ($container, $emitter, $event) {
                 $emitter->addListener($event, $container->lazyGet($listener));
             }, $listeners);
