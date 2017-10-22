@@ -15,7 +15,7 @@ class EmitterFactory
 
         array_walk($events, function ($listeners, $event) use ($container, $emitter) {
             array_map(function ($listener) use ($container, $emitter, $event) {
-                $emitter->addListener($event, $container->lazyGet($listener));
+                $emitter->addListener($event, $container->get($listener));
             }, $listeners);
         });
 
