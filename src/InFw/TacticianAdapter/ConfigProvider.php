@@ -62,7 +62,7 @@ class ConfigProvider
                 CommandBus::class => CommandBusFactory::class,
                 HandlerLocator::class => HandlerLocatorFactory::class,
             ],
-            'alias' => [
+            'aliases' => [
                 \InFw\EventSourcing\EmitterInterface::class => EmitterInterface::class,
             ],
         ];
