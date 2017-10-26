@@ -17,7 +17,12 @@ checks:
         fix_identation_4spaces: true
         fix_doc_comments: true
 
-tools:
-    external_code_coverage:
-        timeout: 600
-        runs: 3
+#tools:
+#    external_code_coverage:
+#        timeout: 600
+#        runs: 3
+
+build:
+    environment:
+        php:
+            version: 7.1
