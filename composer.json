@@ -21,15 +21,15 @@
         }
     ],
     "require": {
-        "php" : "^7.0",
+        "php": "^7.0",
+        "http-interop/http-middleware": "^0.4.1",
         "infw/event-sourcing": "@dev",
-        "infw/framework": "@dev",
         "league/tactician": "^1.0",
         "league/tactician-command-events": "^0.6.0",
         "league/tactician-container": "^1.0",
         "league/tactician-logger": "^0.10.0",
         "monolog/monolog": "^1.23",
-        "zendframework/zend-expressive": "^2.0.2",
+        "zendframework/zend-expressive": "2.0.3",
         "zendframework/zend-stdlib": "^3.1"
     },
     "require-dev": {
@@ -54,18 +54,18 @@
     "scripts": {
         "post-install-cmd": "cp -r vendor/infw/tactician-adapter/config/autoload/* config/autoload/",
         "watch-tests": "phpspec-watcher watch --ansi",
-        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
-        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
-        "spec-describe": "phpspec describe --ansi",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src --ansi",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src",
+        "spec-describe": "phpspec describe",
         "spec-run": "phpspec run --format=pretty --ansi",
         "inspect": "phpstan analyse -l 4 -c phpstan.neon src --ansi"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
         "zf": {
             "config-provider": "InFw\\TacticianAdapter\\ConfigProvider"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     },
     "config": {

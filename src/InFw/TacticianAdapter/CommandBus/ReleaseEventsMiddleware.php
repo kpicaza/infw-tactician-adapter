@@ -2,7 +2,6 @@
 
 namespace InFw\TacticianAdapter\CommandBus;
 
-
 use InFw\EventSourcing\EmitterInterface;
 use League\Tactician\Middleware;
 
