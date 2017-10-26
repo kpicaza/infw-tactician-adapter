@@ -34,7 +34,6 @@
     },
     "require-dev": {
         "fetzi/phpspec-watcher": "^1.0",
-        "henrikbjorn/phpspec-code-coverage": "^3.0",
         "memio/spec-gen": "^0.6.1",
         "phpspec/phpspec": "^3.0",
         "phpunit/phpunit": "^5.7.21",
