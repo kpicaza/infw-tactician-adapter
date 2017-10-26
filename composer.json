@@ -16,8 +16,8 @@
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "../*"
+            "type": "git",
+            "url": "git@github.com:kpicaza/infw-event-sourcing.git"
         }
     ],
     "require": {
