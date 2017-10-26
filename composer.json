@@ -23,7 +23,7 @@
         "league/tactician-container": "^1.0",
         "league/tactician-logger": "^0.10.0",
         "monolog/monolog": "^1.23",
-        "zendframework/zend-expressive": "2.0.3",
+        "zendframework/zend-expressive": "^2.0.3",
         "zendframework/zend-stdlib": "^3.1"
     },
     "require-dev": {
