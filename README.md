@@ -92,7 +92,7 @@ class PingAction extends AbstractAction
 }
 ````
 
-## Override Command Bus
+## Modify Command Bus
 
 You can modify the entire command bus to meet the needs of your project.
 
