@@ -1,9 +1,10 @@
 {
     "name": "infw/tactician-adapter",
     "type": "library",
-    "description": "In framework utility.",
+    "description": "League tactician command bus adapter for zend-expressive framework.",
     "keywords": [
         "infw",
+        "zend-expressive",
         "framework"
     ],
     "homepage": "https://github.com/infw/tactician-adapter",
