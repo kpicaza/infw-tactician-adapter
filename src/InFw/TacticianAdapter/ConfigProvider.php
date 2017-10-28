@@ -6,6 +6,7 @@ use InFw\TacticianAdapter\CommandBus\ReleaseEventsMiddleware;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
 use InFw\TacticianAdapter\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
+use InFw\TacticianAdapter\Factory\LoggerMiddlewareFactory;
 use League\Event\EmitterInterface;
 use League\Tactician\CommandBus;
 use League\Tactician\CommandEvents\EventMiddleware;
@@ -53,7 +54,6 @@ class ConfigProvider
                 MethodNameInflector::class => InvokeInflector::class,
                 CommandNameExtractor::class => ClassNameExtractor::class,
                 LockingMiddleware::class => LockingMiddleware::class,
-                LoggerMiddleware::class => LoggerMiddleware::class,
                 EventMiddleware::class => EventMiddleware::class,
                 ReleaseEventsMiddleware::class => ReleaseEventsMiddleware::class,
             ],
@@ -61,6 +61,7 @@ class ConfigProvider
                 EmitterInterface::class => EmitterFactory::class,
                 CommandBus::class => CommandBusFactory::class,
                 HandlerLocator::class => HandlerLocatorFactory::class,
+                LoggerMiddleware::class => LoggerMiddlewareFactory::class,
             ],
             'aliases' => [
                 \InFw\EventSourcing\EmitterInterface::class => EmitterInterface::class,
