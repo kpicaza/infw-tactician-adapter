@@ -3,6 +3,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kpicaza/infw-tactician-adapter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/infw-tactician-adapter/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/kpicaza/infw-tactician-adapter/badges/build.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/infw-tactician-adapter/build-status/master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c6b276fe-849b-41b7-b78e-4a4342a9b274/mini.png)](https://insight.sensiolabs.com/projects/c6b276fe-849b-41b7-b78e-4a4342a9b274)
+
 [League tactician](http://tactician.thephpleague.com/) command bus adapter for [zend-expressive framework](https://docs.zendframework.com/zend-expressive/).
 
 ## Getting started
