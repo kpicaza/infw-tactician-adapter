@@ -2,9 +2,8 @@
 
 namespace InFw\TacticianAdapter;
 
-use InFw\EventSourcing\Infrastructure\Tactician\ReleaseEventsMiddleware;
+use InFw\EventSourcing\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
-use InFw\TacticianAdapter\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
 use InFw\TacticianAdapter\Factory\LoggerMiddlewareFactory;
 use League\Event\EmitterInterface;
