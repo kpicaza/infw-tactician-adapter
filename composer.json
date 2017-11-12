@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.0",
         "http-interop/http-middleware": "^0.4.1",
-        "infw/event-sourcing": "@dev",
+        "infw/event-sourcing": "^1.0.1",
         "league/tactician": "^1.0",
         "league/tactician-command-events": "^0.6.0",
         "league/tactician-container": "^1.0",
