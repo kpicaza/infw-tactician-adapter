@@ -55,7 +55,6 @@ class ConfigProvider
                 CommandNameExtractor::class => ClassNameExtractor::class,
                 LockingMiddleware::class => LockingMiddleware::class,
                 EventMiddleware::class => EventMiddleware::class,
-                ReleaseEventsMiddleware::class => ReleaseEventsMiddleware::class,
             ],
             'factories' => [
                 EmitterInterface::class => EmitterFactory::class,
