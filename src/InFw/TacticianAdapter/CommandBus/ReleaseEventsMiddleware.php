@@ -5,6 +5,10 @@ namespace InFw\TacticianAdapter\CommandBus;
 use InFw\EventSourcing\EmitterInterface;
 use League\Tactician\Middleware;
 
+/**
+ * Class ReleaseEventsMiddleware
+ * @deprecated (Will remove in 2.0.0)
+ */
 class ReleaseEventsMiddleware implements Middleware
 {
     /**

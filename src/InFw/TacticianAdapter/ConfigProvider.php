@@ -2,7 +2,7 @@
 
 namespace InFw\TacticianAdapter;
 
-use InFw\TacticianAdapter\CommandBus\ReleaseEventsMiddleware;
+use InFw\EventSourcing\Infrastructure\Tactician\ReleaseEventsMiddleware;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
 use InFw\TacticianAdapter\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
@@ -38,9 +38,9 @@ class ConfigProvider
             'extractor' => CommandNameExtractor::class,
             'formatter' => Formatter::class,
             'middleware' => [
-                LockingMiddleware::class,
-                LoggerMiddleware::class,
-                EventMiddleware::class,
+                LockingMiddleware::class => LockingMiddleware::class,
+                LoggerMiddleware::class => LoggerMiddleware::class,
+                EventMiddleware::class => EventMiddleware::class,
             ],
             'handler-map' => [],
         ];
