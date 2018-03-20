@@ -20,12 +20,10 @@ You can activate using Zend config-manager in a expressive modular application.
 
 Create `command-bus.global.php` file inner config autoload directory.
 
-````
+````php
 <?php
 
 // command-bus.global.php
-
-<?php
 
 return [
     'dependencies' => [
@@ -43,7 +41,7 @@ return [
 
 Example command and handler.
 
-````
+````php
 <?php
 
 namespace App\Command;
@@ -54,7 +52,7 @@ class PingCommand
 }
 ````
 
-````
+````php
 <?php
 
 namespace App\Handler;
@@ -73,7 +71,7 @@ class PingHandler
 
 You can use `InFw\TacticianAdapter\Action\AbstractAction` as base action.
 
-````
+````php
 <?php
 
 namespace App\Action;
@@ -99,7 +97,7 @@ You can modify the entire command bus to meet the needs of your project.
 
 This is default config.
 
-````
+````php
 <?php
 
 return [
