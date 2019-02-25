@@ -2,13 +2,10 @@
 
 namespace InFw\TacticianAdapter;
 
-use InFw\EventSourcing\Factory\EmitterFactory;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
 use InFw\TacticianAdapter\Factory\LoggerMiddlewareFactory;
-use League\Event\EmitterInterface;
 use League\Tactician\CommandBus;
-use League\Tactician\CommandEvents\EventMiddleware;
 use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
 use League\Tactician\Handler\CommandNameExtractor\CommandNameExtractor;
 use League\Tactician\Handler\Locator\HandlerLocator;
@@ -29,7 +26,7 @@ class ConfigProvider
         ];
     }
 
-    protected function getBusConfig()
+    protected function getBusConfig(): array
     {
         return [
             'locator' => HandlerLocator::class,
@@ -39,13 +36,12 @@ class ConfigProvider
             'middleware' => [
                 LockingMiddleware::class => LockingMiddleware::class,
                 LoggerMiddleware::class => LoggerMiddleware::class,
-                EventMiddleware::class => EventMiddleware::class,
             ],
             'handler-map' => [],
         ];
     }
 
-    protected function getDependencies()
+    protected function getDependencies(): array
     {
         return [
             'invokables' => [
@@ -53,16 +49,11 @@ class ConfigProvider
                 MethodNameInflector::class => InvokeInflector::class,
                 CommandNameExtractor::class => ClassNameExtractor::class,
                 LockingMiddleware::class => LockingMiddleware::class,
-                EventMiddleware::class => EventMiddleware::class,
             ],
             'factories' => [
-                EmitterInterface::class => EmitterFactory::class,
                 CommandBus::class => CommandBusFactory::class,
                 HandlerLocator::class => HandlerLocatorFactory::class,
                 LoggerMiddleware::class => LoggerMiddlewareFactory::class,
-            ],
-            'aliases' => [
-                \InFw\EventSourcing\EmitterInterface::class => EmitterInterface::class,
             ],
         ];
     }

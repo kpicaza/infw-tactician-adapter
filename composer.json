@@ -16,16 +16,12 @@
         }
     ],
     "require": {
-        "php": "^7.0",
-        "http-interop/http-middleware": "^0.4.1",
-        "infw/event-sourcing": "^1.0.1",
+        "php": "^7.1",
         "league/tactician": "^1.0",
         "league/tactician-command-events": "^0.6.0",
         "league/tactician-container": "^1.0",
         "league/tactician-logger": "^0.10.0",
-        "monolog/monolog": "^1.23",
-        "zendframework/zend-expressive": "^2.0.3",
-        "zendframework/zend-stdlib": "^3.1"
+        "monolog/monolog": "^1.23"
     },
     "require-dev": {
         "fetzi/phpspec-watcher": "^1.0",
