@@ -2,8 +2,8 @@
 
 namespace InFw\TacticianAdapter\Factory;
 
-use Interop\Container\ContainerInterface;
 use League\Tactician\Container\ContainerLocator;
+use Psr\Container\ContainerInterface;
 
 class HandlerLocatorFactory
 {

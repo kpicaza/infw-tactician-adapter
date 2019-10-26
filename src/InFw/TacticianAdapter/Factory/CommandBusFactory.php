@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace InFw\TacticianAdapter\Factory;
 
 use League\Tactician\CommandBus;
 use League\Tactician\Handler\CommandHandlerMiddleware;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class CommandBusFactory
 {
