@@ -5,6 +5,7 @@ namespace InFw\TacticianAdapter;
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
 use InFw\TacticianAdapter\Factory\LoggerMiddlewareFactory;
+use InFw\TacticianAdapter\Factory\QueryBusFactory;
 use League\Tactician\CommandBus;
 use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
 use League\Tactician\Handler\CommandNameExtractor\CommandNameExtractor;
@@ -21,7 +22,8 @@ class ConfigProvider
     public function __invoke()
     {
         return [
-            'command-bus' => $this->getBusConfig(),
+            'command_bus' => $this->getBusConfig(),
+            'query_bus' => $this->getQueryBusConfig(),
             'dependencies' => $this->getDependencies(),
         ];
     }
@@ -37,7 +39,19 @@ class ConfigProvider
                 LockingMiddleware::class => LockingMiddleware::class,
                 LoggerMiddleware::class => LoggerMiddleware::class,
             ],
-            'handler-map' => [],
+            'handler_map' => [],
+        ];
+    }
+
+    protected function getQueryBusConfig(): array
+    {
+        return [
+            'locator' => 'query_bus.handler_locator',
+            'inflector' => MethodNameInflector::class,
+            'extractor' => CommandNameExtractor::class,
+            'formatter' => Formatter::class,
+            'middleware' => [],
+            'handler_map' => [],
         ];
     }
 
@@ -52,7 +66,9 @@ class ConfigProvider
             ],
             'factories' => [
                 CommandBus::class => CommandBusFactory::class,
-                HandlerLocator::class => HandlerLocatorFactory::class,
+                QueryBus::class => QueryBusFactory::class,
+                HandlerLocator::class => [HandlerLocatorFactory::class, 'command_bus'],
+                'query_bus.handler_locator' => [HandlerLocatorFactory::class, 'query_bus'],
                 LoggerMiddleware::class => LoggerMiddlewareFactory::class,
             ],
         ];

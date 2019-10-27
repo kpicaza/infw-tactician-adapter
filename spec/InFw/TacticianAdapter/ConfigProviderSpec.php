@@ -30,9 +30,17 @@ class ConfigProviderSpec extends ObjectBehavior
 
     function it_should_have_command_bus()
     {
-        $commandBus = $this->config['command-bus'];
+        $commandBus = $this->config['command_bus'];
         $commandBus->shouldBeArray();
-        $commandBus['handler-map']->shouldBeArray();
+        $commandBus['handler_map']->shouldBeArray();
         $commandBus['locator']->shouldBe(HandlerLocator::class);
+    }
+
+    function it_should_have_query_bus()
+    {
+        $commandBus = $this->config['query_bus'];
+        $commandBus->shouldBeArray();
+        $commandBus['handler_map']->shouldBeArray();
+        $commandBus['locator']->shouldBe('query_bus.handler_locator');
     }
 }
