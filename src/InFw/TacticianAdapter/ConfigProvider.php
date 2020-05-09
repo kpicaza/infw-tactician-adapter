@@ -4,7 +4,6 @@ namespace InFw\TacticianAdapter;
 
 use InFw\TacticianAdapter\Factory\CommandBusFactory;
 use InFw\TacticianAdapter\Factory\HandlerLocatorFactory;
-use InFw\TacticianAdapter\Factory\LoggerMiddlewareFactory;
 use InFw\TacticianAdapter\Factory\QueryBusFactory;
 use League\Tactician\CommandBus;
 use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
@@ -14,12 +13,11 @@ use League\Tactician\Handler\MethodNameInflector\InvokeInflector;
 use League\Tactician\Handler\MethodNameInflector\MethodNameInflector;
 use League\Tactician\Logger\Formatter\ClassPropertiesFormatter;
 use League\Tactician\Logger\Formatter\Formatter;
-use League\Tactician\Logger\LoggerMiddleware;
 use League\Tactician\Plugins\LockingMiddleware;
 
 class ConfigProvider
 {
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'command_bus' => $this->getBusConfig(),
@@ -37,7 +35,6 @@ class ConfigProvider
             'formatter' => Formatter::class,
             'middleware' => [
                 LockingMiddleware::class => LockingMiddleware::class,
-                LoggerMiddleware::class => LoggerMiddleware::class,
             ],
             'handler_map' => [],
         ];
@@ -69,7 +66,6 @@ class ConfigProvider
                 QueryBus::class => QueryBusFactory::class,
                 HandlerLocator::class => [HandlerLocatorFactory::class, 'command_bus'],
                 'query_bus.handler_locator' => [HandlerLocatorFactory::class, 'query_bus'],
-                LoggerMiddleware::class => LoggerMiddlewareFactory::class,
             ],
         ];
     }

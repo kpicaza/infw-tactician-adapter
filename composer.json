@@ -3,9 +3,10 @@
     "type": "library",
     "description": "League tactician command bus adapter for zend-expressive framework.",
     "keywords": [
-        "infw",
-        "zend-expressive",
-        "framework"
+        "antidot framework",
+        "mezzio",
+        "psr-11",
+        "tactician"
     ],
     "homepage": "https://github.com/infw/tactician-adapter",
     "license": "MIT",
@@ -18,9 +19,7 @@
     "require": {
         "php": "^7.1",
         "league/tactician": "^1.0",
-        "league/tactician-container": "^2.0",
-        "league/tactician-logger": "^0.10.0",
-        "monolog/monolog": "^1.23"
+        "league/tactician-container": "^2.0"
     },
     "require-dev": {
         "fetzi/phpspec-watcher": "^1.0",
@@ -49,7 +48,7 @@
         "inspect": "phpstan analyse -l 4 -c phpstan.neon src --ansi"
     },
     "extra": {
-        "zf": {
+        "laminas": {
             "config-provider": "InFw\\TacticianAdapter\\ConfigProvider"
         },
         "branch-alias": {

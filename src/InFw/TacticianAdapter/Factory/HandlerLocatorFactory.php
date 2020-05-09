@@ -7,7 +7,7 @@ use Psr\Container\ContainerInterface;
 
 class HandlerLocatorFactory
 {
-    public function __invoke(ContainerInterface $container, string $bus = 'command_bus')
+    public function __invoke(ContainerInterface $container, string $bus = 'command_bus'): ContainerLocator
     {
         $commandsMapping = $container->get('config')[$bus]['handler_map'];
 

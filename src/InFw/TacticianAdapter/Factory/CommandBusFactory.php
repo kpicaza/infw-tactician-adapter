@@ -10,11 +10,6 @@ use Psr\Container\ContainerInterface;
 
 class CommandBusFactory
 {
-    /**
-     * @param ContainerInterface $container
-     *
-     * @return CommandBus
-     */
     public function __invoke(ContainerInterface $container): CommandBus
     {
         $config = $container->get('config')['command_bus'];
