@@ -6,6 +6,8 @@
 
 [League tactician](http://tactician.thephpleague.com/) command bus adapter for [zend-expressive framework](https://docs.zendframework.com/zend-expressive/).
 
+> !!!! This package is not more mantained in favor of https://github.com/antidot-framework/tactician-adapter
+
 ## Getting started
 
 ### Installation
